@@ -80,11 +80,11 @@ public class RailwayBooking {
                 Thread t3 = new Thread(new Passenger(booking, name3, seats3));
         
                 t1.start();
-                System.out.println("Thread ID for " + name1 + ": " + t1.threadId());
+                System.out.println("Thread ID for " + name1 + ": " + t1.getId());
                 t2.start();
-                System.out.println("Thread ID for " + name2 + ": " + t2.threadId());
+                System.out.println("Thread ID for " + name2 + ": " + t2.getId());
                 t3.start();
-                System.out.println("Thread ID for " + name3 + ": " + t3.threadId());
+                System.out.println("Thread ID for " + name3 + ": " + t3.getId());
 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

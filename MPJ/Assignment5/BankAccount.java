@@ -43,7 +43,6 @@ public class BankAccount {
     public static void main(String[] args) {
         try {
             Account account = new Account(500);
-
             account.deposit(200);
             account.withdraw(100);
             account.withdraw(700);
