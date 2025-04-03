@@ -10,7 +10,7 @@ class FileDownloader implements Runnable {
     }
 
     public void run() {
-        long threadId = Thread.currentThread().getId(); // Get thread ID
+        long threadId = Thread.currentThread().getId(); 
         for (int i = 1; i <= 10; i++) {
             System.out.println("Thread ID: " + threadId + " - " + file + " download: " + (i * 10) + "%");
             try {
@@ -25,7 +25,7 @@ class FileDownloader implements Runnable {
 
 public class files {
     public static void main(String[] args) {
-        ExecutorService ex = Executors.newFixedThreadPool(3); // 3 threads
+        ExecutorService ex = Executors.newFixedThreadPool(3); 
         String[] files = { "file1", "file2", "file3", "file4", "file5" };
 
         for (String f : files) {
