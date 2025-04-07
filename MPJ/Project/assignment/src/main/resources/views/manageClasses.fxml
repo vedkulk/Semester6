@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" alignment="CENTER" 
+      prefWidth="600" prefHeight="400"
+      styleClass="panel"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miniProject.controllers.ManageClassesController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="Manage Classes" styleClass="header-label"/>
+    <Separator prefWidth="200" />
+    
+    <TextField fx:id="classNameField" promptText="Enter Class Name" prefWidth="300"/>
+    <Button text="Create Class" fx:id="createClassButton" onAction="#createClass" prefWidth="200"/>
+
+    <ListView fx:id="classesListView" prefHeight="150" prefWidth="400"/>
+
+    <Button text="Delete Selected Class" fx:id="deleteClassButton" onAction="#deleteClass" prefWidth="200"/>
+    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+
+</VBox>

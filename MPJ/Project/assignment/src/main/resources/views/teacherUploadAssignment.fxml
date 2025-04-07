@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" alignment="CENTER" 
+      prefWidth="600" prefHeight="400"
+      styleClass="panel"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miniProject.controllers.TeacherUploadAssignmentController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="Upload Assignment" styleClass="header-label"/>
+    <Separator prefWidth="200" />
+
+    <ComboBox fx:id="classDropdown" promptText="Select Class" prefWidth="300"/>
+    
+    <TextField fx:id="assignmentTitleField" promptText="Enter Assignment Title" prefWidth="300"/>
+    <TextArea fx:id="assignmentDescriptionField" promptText="Enter Assignment Description" prefWidth="300" prefHeight="100"/>
+    <DatePicker fx:id="deadlinePicker" promptText="Select Deadline" prefWidth="300"/>
+    
+    <Button text="Select File" fx:id="selectFileButton" onAction="#selectFile" prefWidth="200"/>
+    <Label fx:id="selectedFileLabel" text="No file selected"/>
+
+    <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#uploadAssignment" prefWidth="200"/>
+    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+
+</VBox>

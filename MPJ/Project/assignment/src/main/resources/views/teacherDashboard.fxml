@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" alignment="CENTER" 
+      prefWidth="600" prefHeight="400"
+      styleClass="panel"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miniProject.controllers.TeacherDashboardController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="Teacher Dashboard" styleClass="header-label"/>
+    <Separator prefWidth="200" />
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button text="Manage Classes" fx:id="manageClassesButton" onAction="#openManageClasses" prefWidth="200"/>
+        <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#goToUploadAssignment" prefWidth="200"/>
+        <Button text="View Assignments" fx:id="viewAssignmentsButton" onAction="#goToViewAssignments" prefWidth="200"/>
+        <Button text="Delete Assignment" fx:id="deleteAssignmentButton" onAction="#deleteAssignment" prefWidth="200"/>
+        <Button text="View Submissions" fx:id="viewSubmissionsButton" onAction="#viewSubmissions" prefWidth="200"/>
+        <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="200"/>
+    </VBox>
+
+</VBox>

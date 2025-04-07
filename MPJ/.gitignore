@@ -1,2 +1,53 @@
 *.class
 *.txt
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.js
+mvnw
+mvnw.cmd
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Java
+*.class
+
+# FXML build cache (if any)
+*.fxml~
+
+# Lombok
+lombok.config
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore all generated files (optional)
+generated/
+
+# JavaFX-related (if using local libs)
+lib/
+.ipynb_checkpoints

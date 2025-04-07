@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" alignment="CENTER" 
+      prefWidth="600" prefHeight="400"
+      styleClass="panel"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miniProject.controllers.StudentDashboardController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <!-- Removed the Label and Separator -->
+    <!-- ListView removed -->
+     <Label text="Student Dashboard" styleClass="header-label"/>
+    <Separator prefWidth="200" />
+    <Button text="Join Class" fx:id="joinClassButton" onAction="#joinClass" prefWidth="200"/>
+
+    <!-- Buttons for different student actions -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="View Classes" fx:id="viewClassesButton" onAction="#viewClasses" prefWidth="200"/>
+        <Button text="Download Assignment" fx:id="downloadAssignmentButton" onAction="#downloadAssignment" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Submit Assignment" fx:id="submitAssignmentButton" onAction="#submitAssignment" prefWidth="200"/>
+        <Button text="View Grades" fx:id="viewGradesButton" onAction="#viewGrades" prefWidth="200"/>
+    </HBox>
+    <Button text="My Submissions" onAction="#openMySubmissions" prefWidth="200"/>
+
+    <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="200"/>
+</VBox>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.miniProject.controllers.TeacherViewSubmissionsController"
+      spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <TableView fx:id="submissionsTable" prefHeight="400" />
+
+    <HBox spacing="10">
+        <Button fx:id="gradeButton" text="Grade Submission" onAction="#gradeSubmission" />
+        <Button fx:id="downloadButton" text="Download File" onAction="#downloadSelectedFile"/>
+        <Button fx:id="backButton" text="Back" onAction="#goBack" />
+    </HBox>
+</VBox>
+

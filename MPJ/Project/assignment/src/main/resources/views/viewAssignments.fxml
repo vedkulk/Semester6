@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" alignment="CENTER" 
+      prefWidth="600" prefHeight="400"
+      styleClass="panel"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.miniProject.controllers.ViewAssignmentsController">
+
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Label text="Assignments" styleClass="header-label"/>
+    <Separator prefWidth="200" />
+
+    <ListView fx:id="assignmentsListView" prefHeight="200" prefWidth="400"/>
+    <Button text="Close" onAction="#closeWindow" prefWidth="200"/>
+    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+
+</VBox>
