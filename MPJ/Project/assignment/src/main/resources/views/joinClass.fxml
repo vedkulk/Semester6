@@ -2,19 +2,37 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
 <AnchorPane fx:controller="com.miniProject.controllers.JoinClassController"
-            xmlns:fx="http://javafx.com/fxml" prefWidth="600" prefHeight="400">
-    <children>
-        <Label text="Join Class" layoutX="250" layoutY="30" style="-fx-font-size: 18px;" />
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: white;">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          style="-fx-padding: 40px; -fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);">
+
+        <Label text="Join Class"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
+
         <TextField fx:id="classCodeField" promptText="Enter Class Code"
-                   layoutX="150" layoutY="100" prefWidth="300"/>
-        <Button text="Join" layoutX="250" layoutY="160" onAction="#handleJoinClass"/>
-        <Button text="Go Back" layoutX="250" layoutY="220" onAction="#goBack"/>
-        
-        <!-- ✅ Add this ListView -->
+                   prefWidth="300"
+                   style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 8;" />
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Join" onAction="#handleJoinClass" prefWidth="130"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Go Back" onAction="#goBack" prefWidth="130"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+
+        <Label text="Enrolled Classes:"
+               style="-fx-font-size: 16px; -fx-text-fill: #34495e; -fx-padding: 10 0 0 0;" />
+
         <ListView fx:id="enrolledClassesListView"
-                  layoutX="150" layoutY="270"
-                  prefHeight="100" prefWidth="300"/>
-    </children>
+                  prefHeight="150" prefWidth="400"
+                  style="-fx-border-color: #2980b9; -fx-border-radius: 6;" />
+    </VBox>
 </AnchorPane>

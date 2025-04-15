@@ -2,13 +2,13 @@ package com.miniProject.controllers;
 
 import com.miniProject.database.DatabaseConnection;
 import com.miniProject.utils.UserSession;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.Screen;
@@ -20,8 +20,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginController {
+
     @FXML
-    private VBox loginVBox;
+    private AnchorPane loginVBox;
+
+    @FXML
+    private TextField emailField;
+    @FXML
+    private PasswordField passwordField;
 
     public void initialize() {
         if (loginVBox == null) {
@@ -37,10 +43,6 @@ public class LoginController {
         loginVBox.setPrefWidth(screenWidth * 0.5);
         loginVBox.setPrefHeight(screenHeight * 0.5);
     }
-    @FXML
-    private TextField emailField;
-    @FXML
-    private PasswordField passwordField;
 
     @FXML
     public void handleLogin() {
@@ -69,17 +71,20 @@ public class LoginController {
                     UserSession.setStudentId(rs.getInt("id"));
                 } else if ("TEACHER".equals(role)) {
                     UserSession.setTeacherId(rs.getInt("id"));
+                } else {
+                    showAlert("Error", "Invalid role in the system!");
+                    return;
                 }
 
                 showAlert("Success", "Login Successful!");
-
                 // Redirect to the appropriate dashboard
                 redirectToDashboard();
             } else {
-                showAlert("Error", "Invalid Credentials!");
+                showAlert("Error", "Invalid email or password!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Error", "Database connection issue. Please try again.");
         }
     }
 
@@ -88,8 +93,11 @@ public class LoginController {
             String fxmlFile;
             if ("STUDENT".equals(UserSession.getRole())) {
                 fxmlFile = "/views/studentDashboard.fxml";
-            } else {
+            } else if ("TEACHER".equals(UserSession.getRole())) {
                 fxmlFile = "/views/teacherDashboard.fxml";
+            } else {
+                showAlert("Error", "Role not recognized. Please contact support.");
+                return;
             }
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -102,7 +110,7 @@ public class LoginController {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Could not load the dashboard.");
+            showAlert("Error", "Could not load the dashboard. Please try again.");
         }
     }
 
@@ -110,7 +118,7 @@ public class LoginController {
     public void openRegister() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/register.fxml"));
-            VBox registerView = loader.load();
+            AnchorPane registerView = loader.load(); // Use AnchorPane instead of VBox
 
             // Get the current stage and set the register scene
             Stage stage = (Stage) emailField.getScene().getWindow();

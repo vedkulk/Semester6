@@ -2,27 +2,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.ManageClassesController">
+<AnchorPane fx:controller="com.miniProject.controllers.ManageClassesController"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          style="-fx-padding: 40px; -fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);">
 
-    <Label text="Manage Classes" styleClass="header-label"/>
-    <Separator prefWidth="200" />
-    
-    <TextField fx:id="classNameField" promptText="Enter Class Name" prefWidth="300"/>
-    <Button text="Create Class" fx:id="createClassButton" onAction="#createClass" prefWidth="200"/>
+        <Label text="Manage Classes"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <ListView fx:id="classesListView" prefHeight="150" prefWidth="400"/>
+        <Separator prefWidth="300" />
 
-    <Button text="Delete Selected Class" fx:id="deleteClassButton" onAction="#deleteClass" prefWidth="200"/>
-    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+        <TextField fx:id="classNameField" promptText="Enter Class Name"
+                   prefWidth="300"
+                   style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 8;" />
 
-</VBox>
+        <Button text="Create Class" fx:id="createClassButton" onAction="#createClass" prefWidth="200"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Label text="Your Classes"
+               style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+
+        <ListView fx:id="classesListView" prefHeight="150" prefWidth="400"
+                  style="-fx-border-color: #2980b9; -fx-border-radius: 6;" />
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Delete Selected Class" fx:id="deleteClassButton" onAction="#deleteClass" prefWidth="200"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Go Back" onAction="#goBack" prefWidth="150"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+
+    </VBox>
+</AnchorPane>

@@ -4,41 +4,51 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="login-panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.LoginController">
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.LoginController"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
-    
-    <Label text="Login" styleClass="header-label">
-        <font>
-            <Font size="28.0" name="System Bold"/>
-        </font>
-    </Label>
-    
-    <Separator prefWidth="200" />
-    
-    <GridPane vgap="10" hgap="10" alignment="CENTER">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="90" prefWidth="100" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="200" prefWidth="300" />
-        </columnConstraints>
-        
-        <Label text="Email:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-        <TextField fx:id="emailField" promptText="Enter your email" GridPane.rowIndex="0" GridPane.columnIndex="1" />
-        
-        <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-        <PasswordField fx:id="passwordField" promptText="Enter your password" GridPane.rowIndex="1" GridPane.columnIndex="1" />
-    </GridPane>
-    
-    <HBox spacing="15" alignment="CENTER">
-        <Button text="Login" fx:id="loginButton" onAction="#handleLogin" prefWidth="150" styleClass="action-button" defaultButton="true" />
-        <Button text="Register" onAction="#openRegister" prefWidth="150" styleClass="secondary-button" />
-    </HBox>
-    
-    <Label fx:id="statusLabel" text="" styleClass="status-label" />
-</VBox>
+    <VBox spacing="25" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <Label text="Student Portal Login"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
+
+        <Separator prefWidth="300" />
+
+        <GridPane vgap="15" hgap="10" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="90" prefWidth="100" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200" prefWidth="300" />
+            </columnConstraints>
+
+            <Label text="Email:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                   style="-fx-font-size: 14px; -fx-text-fill: #34495e;" />
+            <TextField fx:id="emailField" promptText="Enter your email"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 8;" />
+
+            <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                   style="-fx-font-size: 14px; -fx-text-fill: #34495e;" />
+            <PasswordField fx:id="passwordField" promptText="Enter your password"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 8;" />
+        </GridPane>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Login" fx:id="loginButton" onAction="#handleLogin" prefWidth="130"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" defaultButton="true" />
+
+            <Button text="Register" onAction="#openRegister" prefWidth="130"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+
+        <Label fx:id="statusLabel" text=""
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 13px;" />
+    </VBox>
+</AnchorPane>

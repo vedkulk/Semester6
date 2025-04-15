@@ -4,23 +4,34 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER"
-    prefWidth="600" prefHeight="400"
-    styleClass="panel"
-    xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.miniProject.controllers.DeleteAssignmentController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.DeleteAssignmentController"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <VBox spacing="25" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-    <Label text="Delete Assignment" styleClass="header-label"/>
-    <Separator prefWidth="200" />
+        <Label text="Delete Assignment"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <!-- ComboBox or ListView for selecting assignment -->
-    <ComboBox fx:id="assignmentsComboBox" prefWidth="200" />
+        <Separator prefWidth="300" />
 
-    <Button text="Delete Assignment" onAction="#deleteAssignment" prefWidth="200"/>
-    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+        <ComboBox fx:id="assignmentsComboBox" promptText="Select an assignment to delete"
+                  prefWidth="300"
+                  style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 6;" />
 
-</VBox>
+        <Button text="Delete Assignment" onAction="#deleteAssignment" prefWidth="200"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Button text="Go Back" onAction="#goBack" prefWidth="200"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Label fx:id="statusLabel" text="" style="-fx-text-fill: #e74c3c; -fx-font-size: 13px;" />
+
+    </VBox>
+</AnchorPane>
