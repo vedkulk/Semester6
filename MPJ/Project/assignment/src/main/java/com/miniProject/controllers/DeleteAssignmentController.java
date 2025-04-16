@@ -17,7 +17,6 @@ public class DeleteAssignmentController {
 
     @FXML
     private ComboBox<String> assignmentsComboBox;  // Change this to ListView<String> if you're using a ListView
-    // @FXML private ListView<String> assignmentsListView;
 
     @FXML
     public void initialize() {

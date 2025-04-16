@@ -16,7 +16,7 @@
           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
           AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-        <Label text="Student Portal Login"
+        <Label text="LMS Portal Login"
                style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
         <Separator prefWidth="300" />

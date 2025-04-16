@@ -34,5 +34,10 @@
         <ListView fx:id="enrolledClassesListView"
                   prefHeight="150" prefWidth="400"
                   style="-fx-border-color: #2980b9; -fx-border-radius: 6;" />
+
+        <!-- 💡 New Leave Button added here -->
+        <Button text="Leave Selected Class" onAction="#handleLeaveClass" prefWidth="200"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
     </VBox>
 </AnchorPane>

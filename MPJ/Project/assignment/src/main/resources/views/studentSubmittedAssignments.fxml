@@ -3,20 +3,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox spacing="15" alignment="CENTER"
-      prefWidth="600" prefHeight="400"
+<VBox spacing="20" alignment="CENTER"
+      prefWidth="700" prefHeight="500"
       xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.StudentSubmittedAssignmentsController">
+      fx:controller="com.miniProject.controllers.StudentSubmittedAssignmentsController"
+      style="-fx-padding: 30px; -fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <Label text="Your Submitted (Ungraded) Assignments"
+           style="-fx-font-size: 24px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <Label text="Your Submitted (Ungraded) Assignments" styleClass="header-label"/>
-    <ListView fx:id="submittedListView" prefHeight="200" prefWidth="500"/>
+    <ListView fx:id="submittedListView" prefHeight="250" prefWidth="600"
+              style="-fx-border-color: #3498db; -fx-border-radius: 6;" />
 
-    <HBox spacing="15" alignment="CENTER">
-        <Button text="Delete Selected Submission" onAction="#deleteSelectedSubmission"/>
-        <Button text="Go Back" onAction="#goBack"/>
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Delete Selected Submission" onAction="#deleteSelectedSubmission"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Button text="Go Back" onAction="#goBack" prefWidth="150"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
     </HBox>
+
 </VBox>

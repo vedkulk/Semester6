@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.StudentDashboardController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.StudentDashboardController"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <VBox spacing="25" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; 
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-    <!-- Removed the Label and Separator -->
-    <!-- ListView removed -->
-     <Label text="Student Dashboard" styleClass="header-label"/>
-    <Separator prefWidth="200" />
-    <Button text="Join Class" fx:id="joinClassButton" onAction="#joinClass" prefWidth="200"/>
+        <Label text="Student Dashboard"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <!-- Buttons for different student actions -->
-    <HBox spacing="15" alignment="CENTER">
-        <Button text="View Classes" fx:id="viewClassesButton" onAction="#viewClasses" prefWidth="200"/>
-        <Button text="Download Assignment" fx:id="downloadAssignmentButton" onAction="#downloadAssignment" prefWidth="200"/>
-    </HBox>
+        <Separator prefWidth="300" />
 
-    <HBox spacing="15" alignment="CENTER">
-        <Button text="Submit Assignment" fx:id="submitAssignmentButton" onAction="#submitAssignment" prefWidth="200"/>
-        <Button text="View Grades" fx:id="viewGradesButton" onAction="#viewGrades" prefWidth="200"/>
-    </HBox>
-    <Button text="My Submissions" onAction="#openMySubmissions" prefWidth="200"/>
-
-    <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="200"/>
-</VBox>
+        <VBox spacing="12" alignment="CENTER">
+            <Button text="Join Class" fx:id="joinClassButton" onAction="#joinClass" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="View Classes" fx:id="viewClassesButton" onAction="#viewClasses" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Download/Submit Assignment" fx:id="downloadAssignmentButton" onAction="#downloadAssignment" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="View Grades" fx:id="viewGradesButton" onAction="#viewGrades" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="My Submissions" fx:id="mySubmissionsButton" onAction="#openMySubmissions" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="250"
+                    style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </VBox>
+    </VBox>
+</AnchorPane>

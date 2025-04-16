@@ -2,28 +2,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.TeacherDashboardController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.TeacherDashboardController"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <VBox spacing="25" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; 
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-    <Label text="Teacher Dashboard" styleClass="header-label"/>
-    <Separator prefWidth="200" />
+        <Label text="Teacher Dashboard"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <VBox spacing="10" alignment="CENTER">
-        <Button text="Manage Classes" fx:id="manageClassesButton" onAction="#openManageClasses" prefWidth="200"/>
-        <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#goToUploadAssignment" prefWidth="200"/>
-        <Button text="View Assignments" fx:id="viewAssignmentsButton" onAction="#goToViewAssignments" prefWidth="200"/>
-        <Button text="Delete Assignment" fx:id="deleteAssignmentButton" onAction="#deleteAssignment" prefWidth="200"/>
-        <Button text="View Submissions" fx:id="viewSubmissionsButton" onAction="#viewSubmissions" prefWidth="200"/>
-        <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="200"/>
+        <Separator prefWidth="300" />
+
+        <VBox spacing="12" alignment="CENTER">
+            <Button text="Manage Classes" fx:id="manageClassesButton" onAction="#openManageClasses" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#goToUploadAssignment" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="View Assignments" fx:id="viewAssignmentsButton" onAction="#goToViewAssignments" prefWidth="250"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Delete Assignment" fx:id="deleteAssignmentButton" onAction="#deleteAssignment" prefWidth="250"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="View Submissions" fx:id="viewSubmissionsButton" onAction="#viewSubmissions" prefWidth="250"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button text="Logout" fx:id="logoutButton" onAction="#logout" prefWidth="250"
+                    style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </VBox>
     </VBox>
-
-</VBox>
+</AnchorPane>

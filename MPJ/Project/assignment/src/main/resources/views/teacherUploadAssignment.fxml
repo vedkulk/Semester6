@@ -2,31 +2,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.TeacherUploadAssignmentController">
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.TeacherUploadAssignmentController"
+            style="-fx-background-color: white;">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <VBox spacing="20" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-    <Label text="Upload Assignment" styleClass="header-label"/>
-    <Separator prefWidth="200" />
+        <Label text="Upload Assignment"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <ComboBox fx:id="classDropdown" promptText="Select Class" prefWidth="300"/>
-    
-    <TextField fx:id="assignmentTitleField" promptText="Enter Assignment Title" prefWidth="300"/>
-    <TextArea fx:id="assignmentDescriptionField" promptText="Enter Assignment Description" prefWidth="300" prefHeight="100"/>
-    <DatePicker fx:id="deadlinePicker" promptText="Select Deadline" prefWidth="300"/>
-    
-    <Button text="Select File" fx:id="selectFileButton" onAction="#selectFile" prefWidth="200"/>
-    <Label fx:id="selectedFileLabel" text="No file selected"/>
+        <Separator prefWidth="300" />
 
-    <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#uploadAssignment" prefWidth="200"/>
-    <Button text="Go Back" onAction="#goBack" prefWidth="200"/>
+        <VBox spacing="15" alignment="CENTER">
 
-</VBox>
+            <ComboBox fx:id="classDropdown" promptText="Select Class" prefWidth="300"
+                      style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 6;" />
+
+            <TextField fx:id="assignmentTitleField" promptText="Enter Assignment Title" prefWidth="300"
+                       style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 6;" />
+
+            <TextArea fx:id="assignmentDescriptionField" promptText="Enter Assignment Description"
+                      prefWidth="300" prefHeight="100"
+                      style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 6;" />
+
+            <DatePicker fx:id="deadlinePicker" promptText="Select Deadline" prefWidth="300"
+                        style="-fx-background-color: white; -fx-border-color: #2980b9; -fx-border-radius: 6;" />
+
+            <Button text="Select File" fx:id="selectFileButton" onAction="#selectFile" prefWidth="200"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            <Label fx:id="selectedFileLabel" text="No file selected"
+                   style="-fx-text-fill: #7f8c8d;" />
+
+            <Button text="Upload Assignment" fx:id="uploadAssignmentButton" onAction="#uploadAssignment" prefWidth="200"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            <Button text="Go Back" onAction="#goBack" prefWidth="200"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        </VBox>
+    </VBox>
+</AnchorPane>

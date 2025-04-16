@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
 
-<VBox spacing="15" alignment="CENTER" 
-      prefWidth="600" prefHeight="400"
-      styleClass="panel"
-      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.miniProject.controllers.StudentAssignmentsController">
+<VBox fx:controller="com.miniProject.controllers.StudentAssignmentsController"
+      xmlns:fx="http://javafx.com/fxml"
+      xmlns="http://javafx.com/javafx/8"
+      prefWidth="800" prefHeight="600"
+      alignment="CENTER" spacing="20"
+      style="-fx-padding: 40px; -fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);">
 
-    <padding>
-        <Insets top="20" right="40" bottom="20" left="40"/>
-    </padding>
+    <Label text="Assignments"
+           style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
-    <Label text="Assignments" styleClass="header-label"/>
-    <Separator prefWidth="200" />
+    <Separator prefWidth="300" />
 
-    <ListView fx:id="assignmentsListView" prefHeight="150" prefWidth="400"/>
-    
-    <Button text="Download Assignment" fx:id="downloadAssignmentButton" onAction="#downloadAssignment" prefWidth="200"/>
+    <ListView fx:id="assignmentsListView"
+              prefHeight="150" prefWidth="400"
+              style="-fx-border-color: #2980b9; -fx-border-radius: 6;" />
 
-    <Label text="Submit Assignment:"/>
-    <Button text="Choose File" fx:id="chooseFileButton" onAction="#chooseFile"/>
-    <Label fx:id="selectedFileLabel" text="No file selected"/>
+    <Button text="Download Assignment"
+            fx:id="downloadAssignmentButton" onAction="#downloadAssignment" prefWidth="200"
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
 
-    <Button text="Submit Assignment" fx:id="submitAssignmentButton" onAction="#submitAssignment" prefWidth="200"/>
-    <HBox alignment="CENTER">
-    <Button fx:id="backButton" text="Go Back" onAction="#goBack" prefWidth="200"/>
-    </HBox>
+    <Label text="Submit Assignment:"
+           style="-fx-font-size: 16px; -fx-text-fill: #34495e;" />
+
+    <Button text="Choose File"
+            fx:id="chooseFileButton" onAction="#chooseFile"
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+    <Label fx:id="selectedFileLabel" text="No file selected"
+           style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" />
+
+    <Button text="Submit Assignment"
+            fx:id="submitAssignmentButton" onAction="#submitAssignment" prefWidth="200"
+            style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+    <Button text="Go Back"
+            fx:id="backButton" onAction="#goBack" prefWidth="200"
+            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
 
 </VBox>

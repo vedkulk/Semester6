@@ -2,7 +2,7 @@ package com.miniProject.controllers;
 
 import com.miniProject.database.DatabaseConnection;
 import com.miniProject.utils.UserSession;
-
+import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.fxml.FXML;
@@ -32,16 +32,16 @@ public class ManageClassesController {
         fetchClasses();
     }
 
-    @FXML
     public void createClass() {
         String className = classNameField.getText();
         if (className.isEmpty()) {
             showAlert("Error", "Class name cannot be empty.");
             return;
         }
-
-        String classCode = UUID.randomUUID().toString().substring(0, 10);
-
+    
+        // Generate a random 4-digit numeric class code
+        String classCode = generateRandomClassCode();
+    
         try (Connection conn = DatabaseConnection.getConnection()) {
             String query = "INSERT INTO classes (class_name, class_code, teacher_id) VALUES (?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -49,7 +49,7 @@ public class ManageClassesController {
             stmt.setString(2, classCode);
             stmt.setInt(3, UserSession.getTeacherId());
             stmt.executeUpdate();
-
+    
             showAlert("Success", "Class created successfully. Class code: " + classCode);
             classNameField.clear();
             fetchClasses();
@@ -57,6 +57,12 @@ public class ManageClassesController {
             e.printStackTrace();
             showAlert("Error", "Failed to create class.");
         }
+    }
+    
+    private String generateRandomClassCode() {
+        Random random = new Random();
+        int code = 1000 + random.nextInt(9000); // Generates a 4-digit number between 1000 and 9999
+        return String.valueOf(code);
     }
 
     @FXML

@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.miniProject.controllers.TeacherViewSubmissionsController"
-      spacing="10">
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+<AnchorPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.miniProject.controllers.TeacherViewSubmissionsController"
+            style="-fx-background-color: white;">
 
-    <TableView fx:id="submissionsTable" prefHeight="400" />
+    <VBox spacing="20" alignment="CENTER"
+          prefWidth="800" prefHeight="600"
+          layoutX="100" layoutY="50"
+          style="-fx-background-color: white; -fx-padding: 40px; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 4);"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
 
-    <HBox spacing="10">
-        <Button fx:id="gradeButton" text="Grade Submission" onAction="#gradeSubmission" />
-        <Button fx:id="downloadButton" text="Download File" onAction="#downloadSelectedFile"/>
-        <Button fx:id="backButton" text="Back" onAction="#goBack" />
-    </HBox>
-</VBox>
+        <Label text="View Submissions"
+               style="-fx-font-size: 28px; -fx-font-family: 'Segoe UI Semibold'; -fx-text-fill: #2c3e50;" />
 
+        <Separator prefWidth="300" />
+
+        <TableView fx:id="submissionsTable" prefHeight="400" prefWidth="600"
+                   style="-fx-border-color: #2980b9; -fx-border-radius: 6; -fx-padding: 6;" />
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="gradeButton" text="Grade Submission" onAction="#gradeSubmission" prefWidth="150"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            <Button fx:id="downloadButton" text="Download File" onAction="#downloadSelectedFile" prefWidth="150"
+                    style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+            <Button fx:id="backButton" text="Back" onAction="#goBack" prefWidth="150"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+        </HBox>
+    </VBox>
+</AnchorPane>
