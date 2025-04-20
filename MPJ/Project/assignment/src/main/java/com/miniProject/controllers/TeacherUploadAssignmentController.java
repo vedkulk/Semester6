@@ -77,7 +77,8 @@ public class TeacherUploadAssignmentController {
     @FXML
     public void selectFile() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF or TXT files", "*.pdf", "*.txt"));
+        fileChooser.getExtensionFilters()
+                .add(new FileChooser.ExtensionFilter("PDF or Doc files", "*.pdf", "*.txt", "*.docx"));
         selectedFile = fileChooser.showOpenDialog(new Stage());
         if (selectedFile != null) {
             selectedFileLabel.setText("Selected: " + selectedFile.getName());
@@ -92,7 +93,8 @@ public class TeacherUploadAssignmentController {
         String description = assignmentDescriptionField.getText();
         LocalDate deadline = deadlinePicker.getValue();
 
-        if (title.isEmpty() || description.isEmpty() || selectedFile == null || deadline == null || selectedClassId == 0) {
+        if (title.isEmpty() || description.isEmpty() || selectedFile == null || deadline == null
+                || selectedClassId == 0) {
             showAlert("Error", "Please fill in all fields and select a file.");
             return;
         }
@@ -106,7 +108,7 @@ public class TeacherUploadAssignmentController {
             stmt.setObject(4, deadline);
             stmt.setString(5, selectedFile.getAbsolutePath());
             stmt.executeUpdate();
-            
+
             showAlert("Success", "Assignment uploaded successfully!");
             clearFields();
         } catch (SQLException e) {
@@ -136,6 +138,7 @@ public class TeacherUploadAssignmentController {
             showAlert("Error", "Could not load the dashboard.");
         }
     }
+
     @FXML
     public void goBack(ActionEvent event) {
         try {
